@@ -4,6 +4,7 @@ import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillFile } from 'react
 import { FaHome } from 'react-icons/fa';
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
+import { getAssetPath } from '../../utils/assetPrefix';
 
 {/* UPDATE THIS PART!! Remove legacyBehavior*/}
 
@@ -48,7 +49,7 @@ const Header = () =>  (
         <AiFillInstagram size="3rem" />
       </SocialIcons>
 
-      <SocialIcons href='/documents/HFY_resume.pdf'>
+      <SocialIcons href={getAssetPath('/documents/HFY_resume.pdf')}>
         <AiFillFile size="3rem" />
       </SocialIcons>
     </Div3>

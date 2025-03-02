@@ -4,6 +4,7 @@ import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponent
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 import { UtilityList } from '../Projects/ProjectsStyles';
+import { getAssetPath } from '../../utils/assetPrefix';
 
 {/* Buttons are not designed responsively! */}
 
@@ -20,8 +21,8 @@ const Hero = () => (
       </SectionText>
 
       <ul style={{display: 'flex', justifyContent: 'space-evenly', margin: '1rem 0'}}>
-          <Button alt onClick={() => window.location.href= "/documents/HFY_resume.pdf"}>Resume</Button>
-          <Button alt onClick={() => window.location.href= "/documents/HFY_transcript.pdf"}>Transcript</Button>
+          <Button alt onClick={() => window.location.href= getAssetPath("/documents/HFY_resume.pdf")}>Resume</Button>
+          <Button alt onClick={() => window.location.href= getAssetPath("/documents/HFY_transcript.pdf")}>Transcript</Button>
       </ul>
 
     </LeftSection>
