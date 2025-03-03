@@ -19,11 +19,25 @@ column-gap: 2rem;
 row-gap: 3rem;
 @media ${(props) => props.theme.breakpoints.sm} {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
   padding: 2rem;
-  padding-bottom: 0;
+  gap: 2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  align-items: stretch;
+  
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
 }
-
 `
 export const BlogCard = styled.div`
   border-radius: 10px;
@@ -34,7 +48,15 @@ export const BlogCard = styled.div`
   flex-direction: column;
   height: 100%;
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 100%;
+    min-width: 300px;
+    width: 90vw;
+    height: auto;
+    min-height: 600px;
+    margin-right: 1rem;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
   }
 `;
 export const TitleContent = styled.div`
@@ -86,6 +108,9 @@ export const CardInfo = styled.p`
   flex-grow: 1;
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
   }
 `;
 
@@ -147,6 +172,14 @@ export const SliderContainer = styled.div`
   overflow: hidden;
   border-radius: 10px 10px 0 0;
   background-color: #0F1624;
+  
+  @media ${(props) => props.theme.breakpoints.sm} {
+    img {
+      object-fit: contain;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
 `;
 
 export const SliderButton = styled.button`
