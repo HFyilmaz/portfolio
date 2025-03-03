@@ -206,3 +206,37 @@ export const SliderButton = styled.button`
     opacity: 1;
   }
 `;
+
+export const PaginationContainer = styled.div`
+  display: none;
+  
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0;
+    width: 100%;
+    padding: 0 2rem;
+  }
+`;
+
+export const PaginationDots = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+`;
+
+export const PaginationDot = styled.div`
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: ${props => props.active ? '#ffffff' : 'rgba(255, 255, 255, 0.3)'};
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.2);
+    background-color: ${props => props.active ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'};
+  }
+`;
